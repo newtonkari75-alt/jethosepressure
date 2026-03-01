@@ -74,6 +74,7 @@
         .faq-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; margin-bottom: 15px; padding: 20px; cursor: pointer; }
         .faq-answer { margin-top: 15px; color: #666; display: none; padding-top: 15px; border-top: 1px solid #eee; }
         .faq-item.active .faq-answer { display: block; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
 
         /* Coupon */
         .coupon-box { border: 3px dashed #1c2b54; border-radius: 30px; background: #fff; padding: 50px; display: flex; gap: 50px; align-items: center; }
@@ -87,10 +88,6 @@
         .footer p, .footer li { color: #bdbdbd; font-size: 14px; margin-bottom: 10px; }
         .footer-bottom { border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center; font-size: 13px; color: #555; }
         .distribuidor-tag { display: block; font-size: 11px; color: #444; margin-top: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Floating CTA */
-        .floating-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; color: #fff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-sizing: border-box; border-top: 1px solid #333; }
-        .floating-cta__btn { background: #0769ed; color: #fff; padding: 12px 25px; border-radius: 8px; font-weight: 900; text-transform: uppercase; font-size: 14px; }
 
         /* Modal Styles for Legal Content */
         .legal-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
@@ -233,13 +230,35 @@
                 <h3 class="section-title--heading">Perguntas Frequentes</h3>
                 <div class="section-title--divider"></div>
             </div>
+            
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">Requer algum equipamento especial? <span>+</span></div>
+                <div class="faq-answer">Não. O JetHose não requer nenhum equipamento especial além de uma mangueira de jardim padrão. Basta conectá-lo à sua mangueira, ajustar as configurações e você estará pronto para começar a limpar. Isso o torna acessível para todos os proprietários que procuram uma solução de limpeza conveniente.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">Quanto tempo leva para ver resultados com o JetHose? <span>+</span></div>
+                <div class="faq-answer">Os resultados podem ser vistos frequentemente logo após a aplicação. No entanto, para resultados ideais em manchas persistentes, você pode precisar fazer várias passagens sobre a área afetada. O tempo exato pode variar dependendo da gravidade da sujeira e do tipo de superfície.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">Posso usar o JetHose para remover manchas de óleo? <span>+</span></div>
+                <div class="faq-answer">Ele foi projetado para eliminar a maioria da sujeira, algas, mofo e manchas leves com facilidade. Ele também pode reduzir a visibilidade da maioria das manchas de óleo e graxa, restaurando a aparência da sua superfície. No entanto, para manchas extremamente persistentes ou incrustadas, o pré-tratamento com um limpador apropriado pode ser necessário para a restauração completa.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">É seguro usar em superfícies delicadas? <span>+</span></div>
+                <div class="faq-answer">Sim. O JetHose é seguro para uso em várias superfícies. Ele permite reduzir a intensidade para materiais mais delicados como madeira ou revestimento de vinil. No entanto, siga sempre as instruções fornecidas e teste primeiro em uma pequena área discreta.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">Em quais superfícies posso usá-lo? <span>+</span></div>
+                <div class="faq-answer">O JetHose foi projetado especificamente para uso em múltiplas superfícies externas. É seguro para uso em concreto, tijolo, revestimento de vinil, decks de madeira, pedra, asfalto e muito mais. Ele permite que você personalize o poder de limpeza com base no tipo de superfície.</div>
+            </div>
+
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">Como o JetHose funciona? <span>+</span></div>
-                <div class="faq-answer">O JetHose utiliza tecnologia avançada de hidro-energia para remover a sujidade e restaurar as suas superfícies. Ele liga-se à sua mangueira de jardim e oferece vários padrões de pulverização.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">Em quais superfícies posso usar? <span>+</span></div>
-                <div class="faq-answer">É seguro para betão, tijolo, vinil, madeira, pedra, asfalto e muito mais.</div>
+                <div class="faq-answer">O JetHose utiliza tecnologia avançada de hidro-energia para remover a sujeira e restaurar suas superfícies. Ele se conecta à sua mangueira de jardim e oferece vários padrões de pulverização que trabalham para remover a sujeira e a graxa, restaurando a aparência limpa de sua propriedade.</div>
             </div>
         </section>
 
@@ -296,18 +315,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Floating Sticky CTA -->
-    <section class="floating-cta">
-        <div class="floating-cta__info">
-            <img src="images/cHJvZHVjdC1pbWctMS00LTEuanBn-w_96.jpg" class="floating-cta__img" alt="Mini">
-            <div>
-                <div style="font-size: 14px; font-weight: 900;">JetHose</div>
-                <div style="font-size: 12px; color: #53A179;">Economize 70% Hoje!</div>
-            </div>
-        </div>
-        <a href="https://get-jethose.checkoutera.com/checkout/us/" class="floating-cta__btn">COMPRAR AGORA</a>
-    </section>
 
     <!-- Modais Legais -->
     <div id="legalModal" class="legal-modal">
