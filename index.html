@@ -17,7 +17,6 @@
 
     <link rel="canonical" href="https://www.jethosepressure.shop/" />
 
-    <!-- Hreflang targeting -->
     <link rel="alternate" hreflang="x-default" href="https://www.jethosepressure.shop/" />
     <link rel="alternate" hreflang="en-US" href="https://www.jethosepressure.shop/" />
     <link rel="alternate" hreflang="en-GB" href="https://www.jethosepressure.shop/" />
@@ -27,32 +26,15 @@
 
     <title>JetHose™ Pressure Nozzle | High-Pressure Cleaning Attachment for Any Garden Hose</title>
 
-    <meta name="description" content="JetHose™ is a high-pressure hose nozzle attachment that delivers powerful, water-efficient cleaning for driveways, patios, decks, siding, cars and more. Fits standard garden hoses. Limited-time savings + 30-day money-back guarantee." />
+    <meta name="description" content="JetHose™ is a high-pressure hose nozzle attachment that delivers powerful, water-efficient cleaning for driveways, patios, decks, siding, cars and more." />
     <meta name="keywords" content="JetHose, JetHose pressure nozzle, high pressure hose nozzle, garden hose nozzle, pressure washing nozzle, car wash nozzle, water efficient cleaning" />
 
-    <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
     <!-- Authorized Script -->
     <script src="https://cdn.rartcloud.com/code/8300-185c7760-2916-481f-ac07-09884c4b9c99"></script>
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://www.jethosepressure.shop/#website",
-          "url": "https://www.jethosepressure.shop/",
-          "name": "JetHose™",
-          "inLanguage": "en"
-        }
-      ]
-    }
-    </script>
 
     <link rel="icon" type="image/png" href="images/SmV0SG9zZV9GSU5BTF9GYXZpY29uXzEucG5n.png">
 
@@ -62,17 +44,25 @@
             --discount-color: #fff;
             --header-background: #06315B; 
             --hero-background-color: #FAFAFA;
+            --alternate-bg: #F4F7FA; /* Nova cor de fundo para seções alternadas */
             --section-title-color: #0b2843;
             --section-seperator-color: #00214f;
             --button-background: #0D40FF;
         }
 
-        body { font-family: "Roboto", sans-serif; margin: 0; color: #333; line-height: 1.5; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; overflow-x: hidden; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-load { animation: fadeInUp 0.8s ease forwards; }
+
+        body { font-family: "Roboto", sans-serif; margin: 0; color: #333; line-height: 1.5; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; overflow-x: hidden; background-color: #fff; }
         img { max-width: 100%; height: auto; display: block; }
         ul { list-style: none; padding: 0; margin: 0; }
         a { text-decoration: none; color: inherit; transition: 0.3s; cursor: pointer; }
 
-        .section-container { max-width: 1132px; margin: 0 auto; padding: 24px 16px; width: 100%; box-sizing: border-box; }
+        .section-container { max-width: 1132px; margin: 0 auto; padding: 60px 16px; width: 100%; box-sizing: border-box; }
         .text-bold { font-weight: 700; }
         .d-flex { display: flex; align-items: center; }
 
@@ -82,7 +72,7 @@
         .header-navigation__wrapper { max-width: 1132px; margin: 0 auto; display: flex; justify-content: center; align-items: center; }
 
         /* Hero */
-        .hero { background: var(--hero-background-color); padding: 60px 0; }
+        .hero { background: var(--hero-background-color); padding: 60px 0; border-bottom: 1px solid #eee; }
         .hero__grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
         .hero-text--heading { font-size: 40px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: #000; }
         .hero-text--subheading { font-size: 18px; color: #444; margin-bottom: 30px; }
@@ -90,31 +80,25 @@
         .hero-checklist__icon { width: 20px; flex-shrink: 0; }
         
         /* Slider Container */
-        .hero-image-container { position: relative; width: 100%; border-radius: 20px; overflow: hidden; background: #eee; aspect-ratio: 1/1; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .hero-image-container img { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            opacity: 0; 
-            transition: opacity 1s ease-in-out; 
-            border-radius: 20px;
-        }
+        .hero-image-container { position: relative; width: 100%; border-radius: 20px; overflow: hidden; background: #eee; aspect-ratio: 1/1; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .hero-image-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; border-radius: 20px; }
         .hero-image-container img.active { opacity: 1; }
         .hero-image--mobile { display: none; }
 
         .cta { display: block; text-align: center; background: #000; color: #fff; padding: 20px 30px; border-radius: 10px; font-weight: 900; text-transform: uppercase; transition: 0.3s; cursor: pointer; border: none; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%; box-sizing: border-box; }
-        .cta:hover { background: #333; transform: translateY(-2px); }
+        .cta:hover { background: #333; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
 
-        /* Sections Title */
+        /* Sections Titles */
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title--heading { font-size: 32px; font-weight: 900; color: var(--section-title-color); margin-bottom: 12px; text-transform: uppercase; }
         .section-title--divider { width: 80px; height: 6px; background: var(--section-seperator-color); margin: 15px auto; border-radius: 10px; }
 
+        /* Alternating Backgrounds */
+        .bg-alt { background-color: var(--alternate-bg); }
+
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card { background: #fff; padding: 40px 30px; border-radius: 20px; border: 1px solid #eee; text-align: center; }
+        .feature-card { background: #fff; padding: 40px 30px; border-radius: 20px; border: 1px solid #eee; text-align: center; transition: 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .feature-card__icon { width: 50px; margin: 0 auto 20px; }
 
         /* Steps */
@@ -126,7 +110,7 @@
 
         /* Country Grid */
         .countries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
-        .country-item { display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e0e0e0; padding: 18px; border-radius: 12px; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; gap: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .country-item { display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e0e0e0; padding: 18px; border-radius: 12px; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; gap: 10px; }
         .country-item:hover { border-color: var(--button-background); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); color: var(--button-background); }
         .flag-icon { width: 24px; height: 18px; flex-shrink: 0; }
 
@@ -136,7 +120,7 @@
         .faq-item.active .faq-answer { display: block; }
         .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 16px; }
 
-        /* Coupon Section Fixed (Desktop: Row | Mobile: Column) */
+        /* Coupon Section */
         .coupon-box { border: 3px dashed #1c2b54; border-radius: 30px; background: #fff; padding: 60px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 50px; width: 100%; box-sizing: border-box; }
         .coupon-content { flex: 1.2; text-align: left; }
         .coupon-img { flex: 1; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
@@ -152,41 +136,38 @@
 
         /* Responsive Mobile Fixes */
         @media (max-width: 992px) {
-            .hero__grid, .footer__grid, .steps-container { grid-template-columns: 1fr; gap: 40px; }
-            .hero { padding: 40px 0; }
+            .section-container { padding: 40px 16px; } /* Redução do espaçamento entre seções no mobile */
+            .hero__grid, .footer__grid, .steps-container { grid-template-columns: 1fr; gap: 30px; }
+            .hero { padding: 30px 0; }
             
             /* Ajuste de Fontes Mobile para melhor legibilidade */
-            .hero-text--heading { font-size: 30px !important; text-align: center; line-height: 1.2; }
-            .hero-text--subheading { font-size: 18px !important; text-align: center; line-height: 1.4; }
-            .hero-checklist__item { font-size: 17px !important; justify-content: center; }
-            .section-title--heading { font-size: 28px !important; }
-            .feature-card p { font-size: 16px !important; }
-            .step-card__content h4 { font-size: 18px !important; }
+            .hero-text--heading { font-size: 28px !important; text-align: center; line-height: 1.2; }
+            .hero-text--subheading { font-size: 17px !important; text-align: center; line-height: 1.4; margin-bottom: 20px; }
+            .hero-checklist__item { font-size: 16px !important; justify-content: center; text-align: left; }
+            .section-title { margin-bottom: 30px; }
+            .section-title--heading { font-size: 24px !important; }
+            .feature-card p { font-size: 15px !important; }
+            .step-card__content h4 { font-size: 17px !important; }
             
-            /* Países em 2 colunas com fonte legível */
+            /* Países em 2 colunas */
             .countries-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .country-item { padding: 15px 10px; font-size: 14px !important; }
+            .country-item { padding: 12px 8px; font-size: 13px !important; }
 
             /* FAQ Mobile */
-            .faq-question { font-size: 17px !important; }
-            .faq-answer { font-size: 16px !important; }
-
-            /* Footer Mobile */
-            .footer h3 { font-size: 16px !important; }
-            .footer p, .footer li { font-size: 15px !important; }
-            .footer-bottom p { font-size: 13px !important; }
+            .faq-question { font-size: 16px !important; }
+            .faq-answer { font-size: 15px !important; }
             
             /* Photo after title in mobile */
-            .hero-image--mobile { display: block; margin: 25px 0; width: 100%; }
+            .hero-image--mobile { display: block; margin: 20px 0; width: 100%; }
             .hero-image--desktop { display: none; }
             
             /* Final Coupon: Imagem antes do botão no mobile */
-            .coupon-box { flex-direction: column; padding: 40px 20px; gap: 25px; text-align: center; }
+            .coupon-box { flex-direction: column; padding: 35px 20px; gap: 20px; text-align: center; border-radius: 20px; }
             .coupon-content { flex: none; text-align: center; width: 100%; display: contents; }
-            .coupon-box h2 { order: 1; margin-bottom: 10px; font-size: 26px !important; }
-            .coupon-box p { order: 2; margin-bottom: 15px; font-size: 17px !important; }
-            .coupon-box .coupon-img { order: 3; margin-bottom: 20px; }
-            .coupon-box .cta { order: 4; max-width: 100%; margin: 0 auto; font-size: 18px !important; }
+            .coupon-box h2 { order: 1; margin-bottom: 8px; font-size: 22px !important; }
+            .coupon-box p { order: 2; margin-bottom: 12px; font-size: 16px !important; }
+            .coupon-box .coupon-img { order: 3; margin-bottom: 15px; }
+            .coupon-box .cta { order: 4; max-width: 100%; margin: 0 auto; font-size: 17px !important; padding: 18px; }
         }
     </style>
 </head>
@@ -204,8 +185,8 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Hero Section (Light Gray BG) -->
+        <section class="hero animate-on-load">
             <div class="section-container">
                 <div class="hero__grid">
                     <div>
@@ -214,9 +195,9 @@
                             <span class="text-bold">4.7</span>
                             <span style="color: #888; font-size: 13px;"> | +1000 Verified Reviews</span>
                         </div>
-                        <h1 class="hero-text--heading">JetHose: Incredible Water Pressure for Your Home!</h1>
+                        <h1 class="hero-text--heading" style="text-align: center;">JetHose: Incredible Water Pressure for Your Home!</h1>
                         
-                        <!-- Mobile Slider: After title in mobile -->
+                        <!-- Mobile Slider -->
                         <div class="hero-image--mobile">
                             <div class="hero-image-container js-slider">
                                 <img src="images/imgi_11_1b419d2636cfe4e589853b85291a84d1.png" class="active" alt="JetHose 1">
@@ -237,7 +218,6 @@
                         <a href="#countries" class="cta">SECURE MY 70% DISCOUNT</a>
                     </div>
                     
-                    <!-- Desktop Slider -->
                     <div class="hero-image--desktop">
                         <div class="hero-image-container js-slider">
                             <img src="images/imgi_11_1b419d2636cfe4e589853b85291a84d1.png" class="active" alt="JetHose 1">
@@ -248,33 +228,35 @@
             </div>
         </section>
 
-        <!-- Features -->
-        <section id="features" class="section-container" style="padding: 80px 16px;">
-            <div class="section-title">
-                <h2 class="section-title--heading">The Future of Cleaning</h2>
-                <div class="section-title--divider"></div>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <img src="images/1-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Hydro-Power Tech</h4>
-                    <p>Proprietary design that focuses water velocity for deep restoration.</p>
+        <!-- Features (White BG) -->
+        <section id="features" class="animate-on-load">
+            <div class="section-container">
+                <div class="section-title">
+                    <h2 class="section-title--heading">The Future of Cleaning</h2>
+                    <div class="section-title--divider"></div>
                 </div>
-                <div class="feature-card">
-                    <img src="images/2-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Real Savings</h4>
-                    <p>Wash everything at home and avoid expensive professional fees.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="images/3-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Universal Fit</h4>
-                    <p>Standard threading fits securely onto any garden hose worldwide.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <img src="images/1-2.svg" class="feature-card__icon">
+                        <h4 class="text-bold">Hydro-Power Tech</h4>
+                        <p>Proprietary design that focuses water velocity for deep restoration.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="images/2-2.svg" class="feature-card__icon">
+                        <h4 class="text-bold">Real Savings</h4>
+                        <p>Wash everything at home and avoid expensive professional fees.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="images/3-2.svg" class="feature-card__icon">
+                        <h4 class="text-bold">Universal Fit</h4>
+                        <p>Standard threading fits securely onto any garden hose worldwide.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Steps -->
-        <section id="setup" style="background: #fff; padding: 80px 0;">
+        <!-- Steps (Light BG) -->
+        <section id="setup" class="bg-alt animate-on-load">
             <div class="section-container">
                 <div class="section-title">
                     <h2 class="section-title--heading">Ready in 3 Simple Steps</h2>
@@ -306,98 +288,101 @@
             </div>
         </section>
 
-        <!-- Choose Country (2 cols mobile) -->
-        <section id="countries" class="section-container" style="padding: 80px 16px;">
-            <div class="section-title">
-                <h2 class="section-title--heading">CHOOSE YOUR COUNTRY</h2>
-                <div class="section-title--divider"></div>
-            </div>
-            <div class="countries-grid">
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">
-                    <svg class="flag-icon" viewBox="0 0 741 390"><path fill="#fff" d="M0 0h741v390H0z"/><path fill="#b22234" d="M0 0h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0z"/><path fill="#3c3b6e" d="M0 0h296.4v210H0z"/></svg>
-                    United States
-                </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45093" class="country-item">
-                    <svg class="flag-icon" viewBox="0 0 60 30"><clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath><g clip-path="url(#a)"><path fill="#012169" d="M0 0v30h60V0z"/><path stroke="#fff" stroke-width="6" d="m0 0 60 30m0-30L0 30"/><path stroke="#C8102E" stroke-width="4" d="m0 0 60 30m0-30L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#C8102E" stroke-width="6" d="M30 0v30M0 15h60"/></g></svg>
-                    United Kingdom
-                </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">
-                    <svg class="flag-icon" viewBox="0 0 200 100"><path fill="#FF0000" d="M0 0h50v100H0zm150 0h50v100h-50z"/><path fill="#FFF" d="M50 0h100v100H50z"/><path fill="#FF0000" d="M100 20l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
-                    Canada
-                </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">
-                    <svg class="flag-icon" viewBox="0 0 200 100"><path fill="#00008B" d="M0 0h200v100H0z"/><path fill="#FFF" d="M0 0h100v50H0zm100 50h100v50h-100z"/><path fill="#00008B" d="M5 5h90v40H5zm105 50h85v40h-85z"/><path fill="#FFF" d="M150 25l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
-                    Australia
-                </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45101" class="country-item">
-                    <svg class="flag-icon" viewBox="0 0 5 3"><path d="M0 0h5v3H0z"/><path fill="#f00" d="M0 1h5v2H0z"/><path fill="#ffce00" d="M0 2h5v1H0z"/></svg>
-                    Deutschland
-                </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45103" class="country-item">
-                    <svg class="flag-icon" viewBox="0 0 3 2"><path fill="#0055A4" d="M0 0h1v2H0z"/><path fill="#FFF" d="M1 0h1v2H1z"/><path fill="#EF4135" d="M2 0h1v2H2z"/></svg>
-                    France
-                </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45105" class="country-item">
-                    <svg class="flag-icon" viewBox="0 0 3 2"><path fill="#AE1C28" d="M0 0h3v.67H0z"/><path fill="#FFF" d="M0 .67h3v.67H0z"/><path fill="#21468B" d="M0 1.34h3V2H0z"/></svg>
-                    Netherlands
-                </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45099" class="country-item">
-                    <svg class="flag-icon" viewBox="0 0 810 540"><path fill="#039" d="M0 0h810v540H0z"/><path fill="#fc0" d="M405 130l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
-                    Europe
-                </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item" style="grid-column: span 2;">
-                    <svg class="flag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
-                    Global
-                </a>
-            </div>
-        </section>
-
-        <!-- FAQ Section (6 Questions) -->
-        <section id="faq" class="section-container">
-            <div class="section-title">
-                <h3 class="section-title--heading">Frequently Asked Questions</h3>
-                <div class="section-title--divider"></div>
-            </div>
-            
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">Does it require any special equipment? <span>+</span></div>
-                <div class="faq-answer">No. JetHose doesn’t require any special equipment beyond a standard garden hose. Simply attach it to your hose, adjust the settings, and you’re ready to start cleaning. This makes it accessible for all homeowners looking for a convenient cleaning solution.</div>
-            </div>
-
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">How long does it take to see results with JetHose? <span>+</span></div>
-                <div class="faq-answer">Results can often be seen immediately after application. However, for optimal results on stubborn stains, you may need to make multiple passes over the affected area. The exact time can vary depending on the severity of the dirt and the type of surface.</div>
-            </div>
-
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">Can I use JetHose to remove oil stains? <span>+</span></div>
-                <div class="faq-answer">It’s designed to eliminate most dirt, algae, mold, and light stains with ease. It can also reduce the visibility of most oil and grease stains, restoring your surface’s appearance. However, for extremely stubborn or set-in stains, pre-treatment with an appropriate cleaner may be necessary for full restoration.</div>
-            </div>
-
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">Is it safe to use on delicate surfaces? <span>+</span></div>
-                <div class="faq-answer">Yes. JetHose is safe to use on various surfaces. It allows you to reduce the intensity for more delicate materials like wood or vinyl siding. However, always follow the instructions provided and test on a small, inconspicuous area first.</div>
-            </div>
-
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">What surfaces can I use it on? <span>+</span></div>
-                <div class="faq-answer">JetHose is specifically designed for use on multiple outdoor surfaces. It’s safe to use on concrete, brick, vinyl siding, wood decking, stone, asphalt, and more. It allows you to customize the cleaning power based on the surface type.</div>
-            </div>
-
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">How does JetHose work? <span>+</span></div>
-                <div class="faq-answer">JetHose uses advanced hydro-power technology to remove dirt and restore your surfaces. It attaches to your garden hose and offers multiple spray patterns work to blast away dirt and grime, restoring your property’s clean appearance.</div>
+        <!-- Choose Country (White BG) -->
+        <section id="countries" class="animate-on-load">
+            <div class="section-container">
+                <div class="section-title">
+                    <h2 class="section-title--heading">CHOOSE YOUR COUNTRY</h2>
+                    <div class="section-title--divider"></div>
+                </div>
+                <div class="countries-grid">
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">
+                        <svg class="flag-icon" viewBox="0 0 741 390"><path fill="#fff" d="M0 0h741v390H0z"/><path fill="#b22234" d="M0 0h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0z"/><path fill="#3c3b6e" d="M0 0h296.4v210H0z"/></svg>
+                        United States
+                    </a>
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45093" class="country-item">
+                        <svg class="flag-icon" viewBox="0 0 60 30"><clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath><g clip-path="url(#a)"><path fill="#012169" d="M0 0v30h60V0z"/><path stroke="#fff" stroke-width="6" d="m0 0 60 30m0-30L0 30"/><path stroke="#C8102E" stroke-width="4" d="m0 0 60 30m0-30L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#C8102E" stroke-width="6" d="M30 0v30M0 15h60"/></g></svg>
+                        United Kingdom
+                    </a>
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">
+                        <svg class="flag-icon" viewBox="0 0 200 100"><path fill="#FF0000" d="M0 0h50v100H0zm150 0h50v100h-50z"/><path fill="#FFF" d="M50 0h100v100H50z"/><path fill="#FF0000" d="M100 20l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
+                        Canada
+                    </a>
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">
+                        <svg class="flag-icon" viewBox="0 0 200 100"><path fill="#00008B" d="M0 0h200v100H0z"/><path fill="#FFF" d="M0 0h100v50H0zm100 50h100v50h-100z"/><path fill="#00008B" d="M5 5h90v40H5zm105 50h85v40h-85z"/><path fill="#FFF" d="M150 25l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
+                        Australia
+                    </a>
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45101" class="country-item">
+                        <svg class="flag-icon" viewBox="0 0 5 3"><path d="M0 0h5v3H0z"/><path fill="#f00" d="M0 1h5v2H0z"/><path fill="#ffce00" d="M0 2h5v1H0z"/></svg>
+                        Deutschland
+                    </a>
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45103" class="country-item">
+                        <svg class="flag-icon" viewBox="0 0 3 2"><path fill="#0055A4" d="M0 0h1v2H0z"/><path fill="#FFF" d="M1 0h1v2H1z"/><path fill="#EF4135" d="M2 0h1v2H2z"/></svg>
+                        France
+                    </a>
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45105" class="country-item">
+                        <svg class="flag-icon" viewBox="0 0 3 2"><path fill="#AE1C28" d="M0 0h3v.67H0z"/><path fill="#FFF" d="M0 .67h3v.67H0z"/><path fill="#21468B" d="M0 1.34h3V2H0z"/></svg>
+                        Netherlands
+                    </a>
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45099" class="country-item">
+                        <svg class="flag-icon" viewBox="0 0 810 540"><path fill="#039" d="M0 0h810v540H0z"/><path fill="#fc0" d="M405 130l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
+                        Europe
+                    </a>
+                    <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item" style="grid-column: span 2;">
+                        <svg class="flag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
+                        Global
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Final Offer -->
-        <section class="coupon" style="padding-bottom: 80px;">
+        <!-- FAQ Section (Light BG) -->
+        <section id="faq" class="bg-alt animate-on-load">
+            <div class="section-container">
+                <div class="section-title">
+                    <h3 class="section-title--heading">Frequently Asked Questions</h3>
+                    <div class="section-title--divider"></div>
+                </div>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">Does it require any special equipment? <span>+</span></div>
+                    <div class="faq-answer">No. JetHose doesn’t require any special equipment beyond a standard garden hose. Simply attach it to your hose, adjust the settings, and you’re ready to start cleaning.</div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">How long does it take to see results? <span>+</span></div>
+                    <div class="faq-answer">Results can often be seen immediately after application. For optimal results on stubborn stains, you may need multiple passes.</div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">Can I use JetHose to remove oil stains? <span>+</span></div>
+                    <div class="faq-answer">It’s designed to eliminate dirt, algae, mold, and light stains. For extremely stubborn or set-in oil stains, pre-treatment may be necessary.</div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">Is it safe to use on delicate surfaces? <span>+</span></div>
+                    <div class="faq-answer">Yes. JetHose allows you to reduce intensity for more delicate materials like wood or vinyl siding. Always test on a small area first.</div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">What surfaces can I use it on? <span>+</span></div>
+                    <div class="faq-answer">It’s safe for concrete, brick, vinyl siding, wood decking, stone, asphalt, and more.</div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">How does JetHose work? <span>+</span></div>
+                    <div class="faq-answer">JetHose uses advanced hydro-power technology to blast away dirt and grime, restoring your property’s appearance.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Offer (White BG) -->
+        <section class="coupon animate-on-load" style="padding-bottom: 80px;">
             <div class="section-container">
                 <div class="coupon-box">
                     <div class="coupon-content">
                         <h2 class="section-title--heading">ENJOY 70% DISCOUNT NOW!</h2>
                         <p style="color: #555; margin-bottom: 25px;">Secure your JetHose today with our exclusive limited-time seasonal discount.</p>
-                        <!-- Desktop button -->
                         <a href="#countries" class="cta" style="background: #0D40FF;">ACTIVATE MY 70% DISCOUNT</a>
                     </div>
                     <div class="coupon-img">
@@ -454,7 +439,7 @@
     </div>
 
     <script>
-        // Automatic Slider Logic (3s interval)
+        // Automatic Slider Logic
         function initSliders() {
             const sliders = document.querySelectorAll('.js-slider');
             sliders.forEach(slider => {
@@ -471,7 +456,7 @@
 
         const legalData = {
             terms: `<h2>Terms</h2><p>Domestic use only. Satisfaction guaranteed within standard use cases.</p>`,
-            privacy: `<h2>Privacy</h2><p>Data is protected and processed securely for fulfillment.</p>`,
+            privacy: `<h2>Privacy</h2><p>Your data is processed securely and encrypted for fulfillment.</p>`,
             shipping: `<h2>Shipping</h2><p>Standard delivery 5-15 days depending on region.</p>`,
             returns: `<h2>Returns</h2><p>30-day money-back guarantee policy.</p>`,
             contact: `<h2>Contact</h2><p>Email: support@get-jethose.com</p>`
