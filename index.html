@@ -69,8 +69,9 @@
 
         /* Countries Grid */
         .countries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
-        .country-item { display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e0e0e0; padding: 15px; border-radius: 10px; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; }
+        .country-item { display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e0e0e0; padding: 15px; border-radius: 10px; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; gap: 10px; }
         .country-item:hover { border-color: var(--button-background); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: var(--button-background); }
+        .country-flag { font-size: 20px; }
 
         /* FAQ */
         .faq-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; margin-bottom: 15px; padding: 20px; cursor: pointer; }
@@ -132,7 +133,7 @@
                 <li><a href="#setup">Como Funciona</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="https://get-jethose.checkoutera.com/checkout/us/" class="cta" style="padding: 10px 20px; font-size: 14px; box-shadow: none;">OBTER 70% OFF</a>
+            <a href="#countries" class="cta" style="padding: 10px 20px; font-size: 14px; box-shadow: none;">OBTER 70% OFF</a>
         </div>
     </nav>
 
@@ -158,7 +159,7 @@
                             <img src="images/socials.png" height="35" alt="Customers">
                             <span style="font-size: 13px;"><strong>+8.000</strong> Clientes Felizes | Envio Imediato</span>
                         </div>
-                        <a href="https://get-jethose.checkoutera.com/checkout/us/" class="cta">QUERO MEU DESCONTO DE 70%</a>
+                        <a href="#countries" class="cta">QUERO MEU DESCONTO DE 70%</a>
                     </div>
                     <div>
                         <img src="images/M19KZXQtSG9zZV9QcmVzc3VyZS1Ob3p6bGUuanBn-h_960.jpg" style="border-radius: 20px;" alt="Product">
@@ -232,14 +233,16 @@
                 <div class="section-title--divider"></div>
             </div>
             <div class="countries-grid">
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">🇺🇸 United States</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45093" class="country-item">🇬🇧 United Kingdom</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">🇨🇦 Canada</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">🇦🇺 Australia</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45099" class="country-item">🇪🇺 Europe</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45101" class="country-item">🇩🇪 Deutschland</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45103" class="country-item">🇫🇷 France</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45105" class="country-item">🇳🇱 Netherlands</a>
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">🇺🇸 US United States</a>
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45093" class="country-item">🇬🇧 GB United Kingdom</a>
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">🇨🇦 CA Canada</a>
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">🇦🇺 AU Australia</a>
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45101" class="country-item">🇩🇪 DE Deutschland</a>
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45103" class="country-item">🇫🇷 FR France</a>
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45105" class="country-item">🇳🇱 NL Netherlands</a>
+                <!-- Europa e Global reordenados para o fim conforme solicitado -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45099" class="country-item">🇪🇺 EU Europe</a>
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">🌐 Global</a>
             </div>
         </section>
 
@@ -288,7 +291,7 @@
                     <div class="coupon-content">
                         <h3 class="section-title--heading" style="text-align: left; font-size: 32px;">APROVEITE 70% DE DESCONTO AGORA!</h3>
                         <p style="margin-bottom: 24px;">Garanta o seu JetHose hoje com o maior desconto do ano.</p>
-                        <a href="https://get-jethose.checkoutera.com/checkout/us/" class="cta" style="background: #0D40FF;">QUERO MEU DESCONTO DE 70%</a>
+                        <a href="#countries" class="cta" style="background: #0D40FF;">QUERO MEU DESCONTO DE 70%</a>
                     </div>
                     <div class="coupon-img">
                         <img src="images/Q291cG9uLTEtZTE3NjA2MTEyNTM0OTYuanBn-w_1100.jpg" alt="Offer">
