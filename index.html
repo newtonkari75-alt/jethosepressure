@@ -83,12 +83,13 @@
 
         /* Hero */
         .hero { background: var(--hero-background-color); padding: 60px 0; }
-        .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero__grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
         .hero-text--heading { font-size: 40px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: #000; }
         .hero-text--subheading { font-size: 18px; color: #444; margin-bottom: 30px; }
         .hero-checklist__item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: #555; font-size: 16px; }
         .hero-checklist__icon { width: 20px; flex-shrink: 0; }
         
+        /* Slider Container */
         .hero-image-container { position: relative; width: 100%; border-radius: 20px; overflow: hidden; background: #eee; aspect-ratio: 1/1; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .hero-image-container img { 
             position: absolute; 
@@ -130,26 +131,26 @@
         .flag-icon { width: 24px; height: 18px; flex-shrink: 0; }
 
         /* FAQ */
-        .faq-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; margin-bottom: 12px; padding: 20px; cursor: pointer; }
-        .faq-answer { margin-top: 15px; color: #666; display: none; padding-top: 15px; border-top: 1px solid #eee; font-size: 15px; }
+        .faq-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; margin-bottom: 12px; padding: 20px; cursor: pointer; transition: 0.2s; }
+        .faq-answer { margin-top: 15px; color: #666; display: none; padding-top: 15px; border-top: 1px solid #eee; font-size: 15px; line-height: 1.6; }
         .faq-item.active .faq-answer { display: block; }
         .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 16px; }
 
-        /* Coupon Section Fixed */
-        .coupon-box { border: 3px dashed #1c2b54; border-radius: 30px; background: #fff; padding: 60px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 35px; width: 100%; box-sizing: border-box; }
-        .coupon-content { max-width: 800px; width: 100%; }
-        .coupon-img { width: 100%; max-width: 900px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        /* Coupon Section Fixed (Desktop: Row | Mobile: Column) */
+        .coupon-box { border: 3px dashed #1c2b54; border-radius: 30px; background: #fff; padding: 60px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 50px; width: 100%; box-sizing: border-box; }
+        .coupon-content { flex: 1.2; text-align: left; }
+        .coupon-img { flex: 1; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 
         /* Footer */
         .footer { background: #000; color: #fff; padding: 80px 0 40px; }
         .footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; }
-        .footer h3 { font-size: 15px; margin-bottom: 20px; text-transform: uppercase; color: #fff; }
+        .footer h3 { font-size: 15px; margin-bottom: 20px; text-transform: uppercase; color: #fff; letter-spacing: 1px; }
         .footer p, .footer li { color: #888; font-size: 14px; margin-bottom: 10px; }
         .footer-bottom { border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center; }
-        .footer-bottom p { font-size: 12px; color: #555; margin-bottom: 6px; }
+        .footer-bottom p { font-size: 11px; color: #555; margin-bottom: 5px; }
         .authorized-distributor-tag { display: inline-block; font-size: 10px; color: #444; margin-top: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #222; padding: 6px 16px; border-radius: 6px; }
 
-        /* Mobile Fixes */
+        /* Responsive Mobile Fixes */
         @media (max-width: 992px) {
             .hero__grid, .footer__grid, .steps-container { grid-template-columns: 1fr; gap: 40px; }
             .hero { padding: 40px 0; }
@@ -157,18 +158,21 @@
             .hero-text--subheading { text-align: center; }
             .hero-checklist__item { justify-content: center; }
             
-            /* Image before text/button in Hero */
+            /* Photo after title in mobile */
             .hero-image--mobile { display: block; margin: 25px 0; width: 100%; }
             .hero-image--desktop { display: none; }
             
-            /* Countries in 2 columns strictly */
+            /* Countries strictly in 2 columns */
             .countries-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .country-item { padding: 15px 10px; font-size: 12px; }
 
-            /* Coupon alignment fix: Image BEFORE button */
-            .coupon-box { padding: 40px 20px; }
-            .coupon-box .coupon-img { order: 2; margin-bottom: 20px; }
-            .coupon-box a.cta { order: 3; }
+            /* Final Coupon: Imagem antes do botão no mobile */
+            .coupon-box { flex-direction: column; padding: 40px 20px; gap: 25px; text-align: center; }
+            .coupon-content { flex: none; text-align: center; width: 100%; display: contents; }
+            .coupon-box h2 { order: 1; margin-bottom: 10px; }
+            .coupon-box p { order: 2; margin-bottom: 15px; }
+            .coupon-box .coupon-img { order: 3; margin-bottom: 20px; }
+            .coupon-box .cta { order: 4; max-width: 100%; margin: 0 auto; }
         }
     </style>
 </head>
@@ -178,6 +182,7 @@
         LIMITED TIME SPECIAL OFFER | UP TO 70% OFF
     </section>
 
+    <!-- Navigation Header -->
     <nav class="header-navigation">
         <div class="header-navigation__wrapper">
             <a href="#"><img src="images/JetHose_FINAL_LOGO_W.svg" alt="JetHose Logo" style="height: 35px;"></a>
@@ -197,7 +202,7 @@
                         </div>
                         <h1 class="hero-text--heading" style="text-align: center;">JetHose: Incredible Water Pressure for Your Home!</h1>
                         
-                        <!-- Mobile Slider: Before Description/Button -->
+                        <!-- Mobile Slider: After title in mobile -->
                         <div class="hero-image--mobile">
                             <div class="hero-image-container js-slider">
                                 <img src="images/imgi_11_1b419d2636cfe4e589853b85291a84d1.png" class="active" alt="JetHose 1">
@@ -212,12 +217,13 @@
                             <li class="hero-checklist__item"><img src="images/Vector-4.svg" class="hero-checklist__icon"> Safe for any surface</li>
                         </ul>
                         <div class="hero-socials" style="margin-top: 25px; margin-bottom: 25px; text-align: center;">
-                            <img src="images/socials.png" height="35" alt="Customers" style="display:inline;">
-                            <div style="font-size: 13px; color: #666;"><strong>+8,000</strong> Happy Customers</div>
+                            <img src="images/socials.png" height="35" alt="Success" style="display:inline;">
+                            <div style="font-size: 13px; color: #666;"><strong>+8,000</strong> Happy Customers Worldwide</div>
                         </div>
                         <a href="#countries" class="cta">SECURE MY 70% DISCOUNT</a>
                     </div>
                     
+                    <!-- Desktop Slider -->
                     <div class="hero-image--desktop">
                         <div class="hero-image-container js-slider">
                             <img src="images/imgi_11_1b419d2636cfe4e589853b85291a84d1.png" class="active" alt="JetHose 1">
@@ -237,18 +243,18 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <img src="images/1-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Hydro-Power Technology</h4>
-                    <p>Proprietary design that concentrates water flow for maximum impact.</p>
+                    <h4 class="text-bold">Hydro-Power Tech</h4>
+                    <p>Proprietary design that focuses water velocity for deep restoration.</p>
                 </div>
                 <div class="feature-card">
                     <img src="images/2-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Massive Savings</h4>
-                    <p>Avoid expensive professional services and specialized equipment rentals.</p>
+                    <h4 class="text-bold">Real Savings</h4>
+                    <p>Wash everything at home and avoid expensive professional fees.</p>
                 </div>
                 <div class="feature-card">
                     <img src="images/3-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Universal Adaptability</h4>
-                    <p>Standardized thread fits any garden hose on the market.</p>
+                    <h4 class="text-bold">Universal Fit</h4>
+                    <p>Standard threading fits securely onto any garden hose worldwide.</p>
                 </div>
             </div>
         </section>
@@ -286,7 +292,7 @@
             </div>
         </section>
 
-        <!-- Countries (Mobile: 2 Columns) -->
+        <!-- Choose Country (2 cols mobile) -->
         <section id="countries" class="section-container" style="padding: 80px 16px;">
             <div class="section-title">
                 <h2 class="section-title--heading">CHOOSE YOUR COUNTRY</h2>
@@ -332,38 +338,57 @@
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- FAQ Section (Restored 6 Questions) -->
         <section id="faq" class="section-container">
             <div class="section-title">
                 <h3 class="section-title--heading">Frequently Asked Questions</h3>
                 <div class="section-title--divider"></div>
             </div>
+            
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">Does it require any special equipment? <span>+</span></div>
-                <div class="faq-answer">No. JetHose works with any standard garden hose. Just plug it in and spray.</div>
+                <div class="faq-answer">No. JetHose doesn’t require any special equipment beyond a standard garden hose. Simply attach it to your hose, adjust the settings, and you’re ready to start cleaning. This makes it accessible for all homeowners looking for a convenient cleaning solution.</div>
             </div>
+
             <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">How long until I see results? <span>+</span></div>
-                <div class="faq-answer">Results are visible instantly upon application to dirty surfaces.</div>
+                <div class="faq-question">How long does it take to see results with JetHose? <span>+</span></div>
+                <div class="faq-answer">Results can often be seen immediately after application. However, for optimal results on stubborn stains, you may need to make multiple passes over the affected area. The exact time can vary depending on the severity of the dirt and the type of surface.</div>
             </div>
+
             <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">Is it safe for cars? <span>+</span></div>
-                <div class="faq-answer">Yes, it is perfectly safe for vehicle paint and windows when used as directed.</div>
+                <div class="faq-question">Can I use JetHose to remove oil stains? <span>+</span></div>
+                <div class="faq-answer">It’s designed to eliminate most dirt, algae, mold, and light stains with ease. It can also reduce the visibility of most oil and grease stains, restoring your surface’s appearance. However, for extremely stubborn or set-in stains, pre-treatment with an appropriate cleaner may be necessary for full restoration.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">Is it safe to use on delicate surfaces? <span>+</span></div>
+                <div class="faq-answer">Yes. JetHose is safe to use on various surfaces. It allows you to reduce the intensity for more delicate materials like wood or vinyl siding. However, always follow the instructions provided and test on a small, inconspicuous area first.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">What surfaces can I use it on? <span>+</span></div>
+                <div class="faq-answer">JetHose is specifically designed for use on multiple outdoor surfaces. It’s safe to use on concrete, brick, vinyl siding, wood decking, stone, asphalt, and more. It allows you to customize the cleaning power based on the surface type.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">How does JetHose work? <span>+</span></div>
+                <div class="faq-answer">JetHose uses advanced hydro-power technology to remove dirt and restore your surfaces. It attaches to your garden hose and offers multiple spray patterns work to blast away dirt and grime, restoring your property’s clean appearance.</div>
             </div>
         </section>
 
-        <!-- Final Offer (Mobile Alignment Fix: Image BEFORE Button) -->
+        <!-- Final Offer (Side by Side Desktop | Image BEFORE Button Mobile) -->
         <section class="coupon" style="padding-bottom: 80px;">
             <div class="section-container">
                 <div class="coupon-box">
                     <div class="coupon-content">
                         <h2 class="section-title--heading">ENJOY 70% DISCOUNT NOW!</h2>
-                        <p style="color: #555;">Secure your JetHose today with our exclusive limited-time seasonal discount.</p>
+                        <p style="color: #555; margin-bottom: 25px;">Secure your JetHose today with our exclusive limited-time seasonal discount.</p>
+                        <!-- Desktop button is kept here -->
+                        <a href="#countries" class="cta" style="background: #0D40FF;">ACTIVATE MY 70% DISCOUNT</a>
                     </div>
                     <div class="coupon-img">
-                        <img src="images/Q291cG9uLTEtZTE3NjA2MTEyNTM0OTYuanBn-w_1100.jpg" alt="Special Offer">
+                        <img src="images/Q291cG9uLTEtZTE3NjA2MTEyNTM0OTYuanBn-w_1100.jpg" alt="Final Offer">
                     </div>
-                    <a href="#countries" class="cta" style="background: #0D40FF; max-width: 450px;">ACTIVATE MY 70% DISCOUNT</a>
                 </div>
             </div>
         </section>
@@ -374,8 +399,8 @@
         <div class="section-container">
             <div class="footer__grid">
                 <div>
-                    <img src="images/JetHose_FINAL_LOGO_W.svg" width="150" alt="Logo">
-                    <p style="margin-top: 20px;">Simplifying outdoor maintenance worldwide.</p>
+                    <img src="images/JetHose_FINAL_LOGO_W.svg" width="150" alt="Footer Logo">
+                    <p style="margin-top: 20px;">Simplifying outdoor maintenance with premium pressure solutions.</p>
                 </div>
                 <div>
                     <h3>Legal</h3>
@@ -406,7 +431,7 @@
         </div>
     </footer>
 
-    <!-- Modals -->
+    <!-- Legal Modals -->
     <div id="legalModal" class="legal-modal">
         <div class="legal-modal-content">
             <span class="close-modal" onclick="closeLegal()">&times;</span>
@@ -415,12 +440,13 @@
     </div>
 
     <script>
-        // Slider Logic
+        // Automatic Slider Logic (3s interval)
         function initSliders() {
             const sliders = document.querySelectorAll('.js-slider');
             sliders.forEach(slider => {
                 const imgs = slider.querySelectorAll('img');
                 let currentIdx = 0;
+                if(imgs.length < 2) return;
                 setInterval(() => {
                     imgs[currentIdx].classList.remove('active');
                     currentIdx = (currentIdx + 1) % imgs.length;
@@ -430,11 +456,11 @@
         }
 
         const legalData = {
-            terms: `<h2>Terms</h2><p>Domestic use only. Satisfaction guaranteed.</p>`,
-            privacy: `<h2>Privacy</h2><p>Data is protected and encrypted.</p>`,
-            shipping: `<h2>Shipping</h2><p>Worldwide delivery 5-15 days.</p>`,
-            returns: `<h2>Returns</h2><p>30-day money-back guarantee.</p>`,
-            contact: `<h2>Contact</h2><p>support@get-jethose.com</p>`
+            terms: `<h2>Terms</h2><p>Domestic use only. Satisfaction guaranteed within standard use cases.</p>`,
+            privacy: `<h2>Privacy</h2><p>Data is protected and processed securely for fulfillment.</p>`,
+            shipping: `<h2>Shipping</h2><p>Standard delivery 5-15 days depending on region.</p>`,
+            returns: `<h2>Returns</h2><p>30-day money-back guarantee policy.</p>`,
+            contact: `<h2>Contact</h2><p>Email: support@get-jethose.com</p>`
         };
 
         function openLegal(key) {
