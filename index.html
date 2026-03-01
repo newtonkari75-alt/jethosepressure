@@ -32,13 +32,12 @@
 
         /* Header */
         .header-discount { background: var(--discount-background); color: var(--discount-color); text-align: center; padding: 10px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+        
         .header-middle { background: var(--middle-background); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); color: #fff; }
         .header-middle__wrapper { max-width: 1132px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 16px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
         
-        .header-navigation { background: #06315B; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 16px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #fff; }
-        .header-navigation__wrapper { max-width: 1132px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .nav-links { display: flex; gap: 24px; font-weight: 700; font-size: 13px; text-transform: uppercase; }
-        .nav-links a:hover { opacity: 0.8; }
+        .header-navigation { background: #06315B; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 16px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #fff; }
+        .header-navigation__wrapper { max-width: 1132px; margin: 0 auto; display: flex; justify-content: center; align-items: center; }
 
         /* Hero */
         .hero { background: var(--hero-background-color); padding: 60px 0; }
@@ -69,9 +68,9 @@
 
         /* Countries Grid */
         .countries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
-        .country-item { display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e0e0e0; padding: 15px; border-radius: 10px; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; gap: 10px; }
+        .country-item { display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e0e0e0; padding: 18px; border-radius: 10px; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; gap: 12px; }
         .country-item:hover { border-color: var(--button-background); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: var(--button-background); }
-        .country-flag { font-size: 20px; }
+        .flag-icon { width: 24px; height: 24px; flex-shrink: 0; }
 
         /* FAQ */
         .faq-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; margin-bottom: 15px; padding: 20px; cursor: pointer; }
@@ -102,7 +101,7 @@
         @media (max-width: 992px) {
             .hero__grid, .footer__grid, .steps-container { grid-template-columns: 1fr; }
             .coupon-box { flex-direction: column-reverse; padding: 30px; }
-            .nav-links, .header-middle { display: none; }
+            .header-middle { display: none; }
         }
     </style>
 </head>
@@ -112,10 +111,12 @@
         OFERTA ESPECIAL POR TEMPO LIMITADO | ATÉ 70% DE DESCONTO
     </section>
 
+    <!-- Barra de confiança (Rodapé do cabeçalho) -->
     <section class="header-middle">
         <div class="header-middle__wrapper">
             <div class="d-flex" style="gap: 10px;">
-                <img src="images/flag-fallback.svg" width="18" alt="EUA">
+                <!-- Flag USA SVG -->
+                <svg class="flag-icon" viewBox="0 0 741 390"><path fill="#fff" d="M0 0h741v390H0z"/><path fill="#b22234" d="M0 0h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0z"/><path fill="#3c3b6e" d="M0 0h296.4v210H0z"/></svg>
                 <span>PRESSURIZADOR NÚMERO #1 DA AMÉRICA</span>
             </div>
             <div class="d-flex" style="gap: 25px;">
@@ -127,13 +128,7 @@
 
     <nav class="header-navigation">
         <div class="header-navigation__wrapper">
-            <a href="#"><img src="images/JetHose_FINAL_LOGO_W.svg" alt="JetHose Logo"></a>
-            <ul class="nav-links">
-                <li><a href="#features">Recursos</a></li>
-                <li><a href="#setup">Como Funciona</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-            <a href="#countries" class="cta" style="padding: 10px 20px; font-size: 14px; box-shadow: none;">OBTER 70% OFF</a>
+            <a href="#"><img src="images/JetHose_FINAL_LOGO_W.svg" alt="JetHose Logo" style="height: 40px;"></a>
         </div>
     </nav>
 
@@ -233,16 +228,51 @@
                 <div class="section-title--divider"></div>
             </div>
             <div class="countries-grid">
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">🇺🇸 US United States</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45093" class="country-item">🇬🇧 GB United Kingdom</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">🇨🇦 CA Canada</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">🇦🇺 AU Australia</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45101" class="country-item">🇩🇪 DE Deutschland</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45103" class="country-item">🇫🇷 FR France</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45105" class="country-item">🇳🇱 NL Netherlands</a>
-                <!-- Europa e Global reordenados para o fim conforme solicitado -->
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45099" class="country-item">🇪🇺 EU Europe</a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">🌐 Global</a>
+                <!-- USA -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 741 390"><path fill="#fff" d="M0 0h741v390H0z"/><path fill="#b22234" d="M0 0h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0z"/><path fill="#3c3b6e" d="M0 0h296.4v210H0z"/></svg>
+                    United States
+                </a>
+                <!-- UK -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45093" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 60 30"><clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath><g clip-path="url(#a)"><path fill="#012169" d="M0 0v30h60V0z"/><path stroke="#fff" stroke-width="6" d="m0 0 60 30m0-30L0 30"/><path stroke="#C8102E" stroke-width="4" d="m0 0 60 30m0-30L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#C8102E" stroke-width="6" d="M30 0v30M0 15h60"/></g></svg>
+                    United Kingdom
+                </a>
+                <!-- Canada -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 200 100"><path fill="#FF0000" d="M0 0h50v100H0zm150 0h50v100h-50z"/><path fill="#FFF" d="M50 0h100v100H50z"/><path fill="#FF0000" d="M100 20l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
+                    Canada
+                </a>
+                <!-- Australia -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 200 100"><path fill="#00008B" d="M0 0h200v100H0z"/><path fill="#FFF" d="M0 0h100v50H0zm100 50h100v50h-100z"/><path fill="#00008B" d="M5 5h90v40H5zm105 50h85v40h-85z"/><path fill="#FFF" d="M150 25l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
+                    Australia
+                </a>
+                <!-- Deutschland -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45101" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 5 3"><path d="M0 0h5v3H0z"/><path fill="#f00" d="M0 1h5v2H0z"/><path fill="#ffce00" d="M0 2h5v1H0z"/></svg>
+                    Deutschland
+                </a>
+                <!-- France -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45103" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 3 2"><path fill="#0055A4" d="M0 0h1v2H0z"/><path fill="#FFF" d="M1 0h1v2H1z"/><path fill="#EF4135" d="M2 0h1v2H2z"/></svg>
+                    France
+                </a>
+                <!-- Netherlands -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45105" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 3 2"><path fill="#AE1C28" d="M0 0h3v.67H0z"/><path fill="#FFF" d="M0 .67h3v.67H0z"/><path fill="#21468B" d="M0 1.34h3V2H0z"/></svg>
+                    Netherlands
+                </a>
+                <!-- Europe -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45099" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 810 540"><path fill="#039" d="M0 0h810v540H0z"/><path fill="#fc0" d="M405 130l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
+                    Europe
+                </a>
+                <!-- Global -->
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">
+                    <svg class="flag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
+                    Global
+                </a>
             </div>
         </section>
 
