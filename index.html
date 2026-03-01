@@ -108,7 +108,7 @@
         .cta { display: block; text-align: center; background: #000; color: #fff; padding: 20px 30px; border-radius: 10px; font-weight: 900; text-transform: uppercase; transition: 0.3s; cursor: pointer; border: none; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%; box-sizing: border-box; }
         .cta:hover { background: #333; transform: translateY(-2px); }
 
-        /* Sections */
+        /* Sections Title */
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title--heading { font-size: 32px; font-weight: 900; color: var(--section-title-color); margin-bottom: 12px; text-transform: uppercase; }
         .section-title--divider { width: 80px; height: 6px; background: var(--section-seperator-color); margin: 15px auto; border-radius: 10px; }
@@ -154,25 +154,39 @@
         @media (max-width: 992px) {
             .hero__grid, .footer__grid, .steps-container { grid-template-columns: 1fr; gap: 40px; }
             .hero { padding: 40px 0; }
-            .hero-text--heading { font-size: 32px; text-align: center; }
-            .hero-text--subheading { text-align: center; }
-            .hero-checklist__item { justify-content: center; }
+            
+            /* Ajuste de Fontes Mobile para melhor legibilidade */
+            .hero-text--heading { font-size: 30px !important; text-align: center; line-height: 1.2; }
+            .hero-text--subheading { font-size: 18px !important; text-align: center; line-height: 1.4; }
+            .hero-checklist__item { font-size: 17px !important; justify-content: center; }
+            .section-title--heading { font-size: 28px !important; }
+            .feature-card p { font-size: 16px !important; }
+            .step-card__content h4 { font-size: 18px !important; }
+            
+            /* Países em 2 colunas com fonte legível */
+            .countries-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .country-item { padding: 15px 10px; font-size: 14px !important; }
+
+            /* FAQ Mobile */
+            .faq-question { font-size: 17px !important; }
+            .faq-answer { font-size: 16px !important; }
+
+            /* Footer Mobile */
+            .footer h3 { font-size: 16px !important; }
+            .footer p, .footer li { font-size: 15px !important; }
+            .footer-bottom p { font-size: 13px !important; }
             
             /* Photo after title in mobile */
             .hero-image--mobile { display: block; margin: 25px 0; width: 100%; }
             .hero-image--desktop { display: none; }
             
-            /* Countries strictly in 2 columns */
-            .countries-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .country-item { padding: 15px 10px; font-size: 12px; }
-
             /* Final Coupon: Imagem antes do botão no mobile */
             .coupon-box { flex-direction: column; padding: 40px 20px; gap: 25px; text-align: center; }
             .coupon-content { flex: none; text-align: center; width: 100%; display: contents; }
-            .coupon-box h2 { order: 1; margin-bottom: 10px; }
-            .coupon-box p { order: 2; margin-bottom: 15px; }
+            .coupon-box h2 { order: 1; margin-bottom: 10px; font-size: 26px !important; }
+            .coupon-box p { order: 2; margin-bottom: 15px; font-size: 17px !important; }
             .coupon-box .coupon-img { order: 3; margin-bottom: 20px; }
-            .coupon-box .cta { order: 4; max-width: 100%; margin: 0 auto; }
+            .coupon-box .cta { order: 4; max-width: 100%; margin: 0 auto; font-size: 18px !important; }
         }
     </style>
 </head>
@@ -200,7 +214,7 @@
                             <span class="text-bold">4.7</span>
                             <span style="color: #888; font-size: 13px;"> | +1000 Verified Reviews</span>
                         </div>
-                        <h1 class="hero-text--heading" style="text-align: center;">JetHose: Incredible Water Pressure for Your Home!</h1>
+                        <h1 class="hero-text--heading">JetHose: Incredible Water Pressure for Your Home!</h1>
                         
                         <!-- Mobile Slider: After title in mobile -->
                         <div class="hero-image--mobile">
@@ -338,7 +352,7 @@
             </div>
         </section>
 
-        <!-- FAQ Section (Restored 6 Questions) -->
+        <!-- FAQ Section (6 Questions) -->
         <section id="faq" class="section-container">
             <div class="section-title">
                 <h3 class="section-title--heading">Frequently Asked Questions</h3>
@@ -376,14 +390,14 @@
             </div>
         </section>
 
-        <!-- Final Offer (Side by Side Desktop | Image BEFORE Button Mobile) -->
+        <!-- Final Offer -->
         <section class="coupon" style="padding-bottom: 80px;">
             <div class="section-container">
                 <div class="coupon-box">
                     <div class="coupon-content">
                         <h2 class="section-title--heading">ENJOY 70% DISCOUNT NOW!</h2>
                         <p style="color: #555; margin-bottom: 25px;">Secure your JetHose today with our exclusive limited-time seasonal discount.</p>
-                        <!-- Desktop button is kept here -->
+                        <!-- Desktop button -->
                         <a href="#countries" class="cta" style="background: #0D40FF;">ACTIVATE MY 70% DISCOUNT</a>
                     </div>
                     <div class="coupon-img">
