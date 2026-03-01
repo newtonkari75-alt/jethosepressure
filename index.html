@@ -3,7 +3,7 @@
 <head>
     <!-- =========================
          SEO HEAD PACK (JetHose)
-         Invisible Organic SEO
+         Invisible Organic SEO & Google Ads Compliance 2026
     ========================= -->
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -133,6 +133,8 @@
         .hero-checklist__item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: #555; font-size: 16px; }
         .hero-checklist__icon { width: 20px; flex-shrink: 0; }
         
+        .hero-image--mobile { display: none; }
+
         .cta { display: block; text-align: center; background: #000; color: #fff; padding: 20px 30px; border-radius: 10px; font-weight: 900; text-transform: uppercase; transition: 0.3s; cursor: pointer; border: none; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .cta:hover { background: #333; transform: translateY(-2px); }
 
@@ -164,18 +166,25 @@
         .faq-item.active .faq-answer { display: block; }
         .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
 
-        /* Coupon */
-        .coupon-box { border: 3px dashed #1c2b54; border-radius: 30px; background: #fff; padding: 50px; display: flex; gap: 50px; align-items: center; }
-        .coupon-content { flex: 1.2; }
-        .coupon-img { flex: 1; border-radius: 20px; overflow: hidden; }
-
         /* Footer */
         .footer { background: #000; color: #fff; padding: 80px 0 40px; }
         .footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; }
         .footer h3 { font-size: 16px; margin-bottom: 20px; text-transform: uppercase; color: #fff; }
         .footer p, .footer li { color: #bdbdbd; font-size: 14px; margin-bottom: 10px; }
-        .footer-bottom { border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center; font-size: 13px; color: #555; }
-        .distribuidor-tag { display: block; font-size: 11px; color: #444; margin-top: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-bottom { border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center; }
+        .footer-bottom p { font-size: 13px; color: #555; margin-bottom: 8px; }
+        
+        /* Nota de Distribuidora Autorizada Discreta */
+        .authorized-distributor-note { 
+            display: block; 
+            font-size: 10px; 
+            color: #333; 
+            margin-top: 10px; 
+            font-weight: 400; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            opacity: 0.7;
+        }
 
         /* Modal Styles for Legal Content */
         .legal-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
@@ -188,6 +197,8 @@
             .hero__grid, .footer__grid, .steps-container { grid-template-columns: 1fr; }
             .coupon-box { flex-direction: column-reverse; padding: 30px; }
             .header-middle { display: none; }
+            .hero-image--mobile { display: block; margin-bottom: 30px; }
+            .hero-image--desktop { display: none; }
         }
     </style>
 </head>
@@ -197,7 +208,7 @@
         OFERTA ESPECIAL POR TEMPO LIMITADO | ATÉ 70% DE DESCONTO
     </section>
 
-    <!-- Barra de confiança -->
+    <!-- Barra de confiança (Rodapé do cabeçalho) -->
     <section class="header-middle">
         <div class="header-middle__wrapper">
             <div class="d-flex" style="gap: 10px;">
@@ -229,6 +240,11 @@
                             <span style="color: #888;">| +1000 Avaliações Verificadas</span>
                         </div>
                         <h1 class="hero-text--heading">JetHose: Pressão de Água Incrível para Sua Casa!</h1>
+                        
+                        <div class="hero-image--mobile">
+                            <img src="images/M19KZXQtSG9zZV9QcmVzc3VyZS1Ob3p6bGUuanBn-h_960.jpg" style="border-radius: 20px;" alt="JetHose Product Mobile">
+                        </div>
+
                         <p class="hero-text--subheading">Poupe 70% hoje e transforme sua mangueira comum em uma lavadora potente.</p>
                         <ul>
                             <li class="hero-checklist__item"><img src="images/Vector-4.svg" class="hero-checklist__icon"> Limpeza ultra-potente instantânea</li>
@@ -241,7 +257,8 @@
                         </div>
                         <a href="#countries" class="cta">QUERO MEU DESCONTO DE 70%</a>
                     </div>
-                    <div>
+                    
+                    <div class="hero-image--desktop">
                         <img src="images/M19KZXQtSG9zZV9QcmVzc3VyZS1Ob3p6bGUuanBn-h_960.jpg" style="border-radius: 20px;" alt="Product">
                     </div>
                 </div>
@@ -313,47 +330,38 @@
                 <div class="section-title--divider"></div>
             </div>
             <div class="countries-grid">
-                <!-- USA -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 741 390"><path fill="#fff" d="M0 0h741v390H0z"/><path fill="#b22234" d="M0 0h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0zm0 60h741v30H0z"/><path fill="#3c3b6e" d="M0 0h296.4v210H0z"/></svg>
                     United States
                 </a>
-                <!-- UK -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45093" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 60 30"><clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath><g clip-path="url(#a)"><path fill="#012169" d="M0 0v30h60V0z"/><path stroke="#fff" stroke-width="6" d="m0 0 60 30m0-30L0 30"/><path stroke="#C8102E" stroke-width="4" d="m0 0 60 30m0-30L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#C8102E" stroke-width="6" d="M30 0v30M0 15h60"/></g></svg>
                     United Kingdom
                 </a>
-                <!-- Canada -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 200 100"><path fill="#FF0000" d="M0 0h50v100H0zm150 0h50v100h-50z"/><path fill="#FFF" d="M50 0h100v100H50z"/><path fill="#FF0000" d="M100 20l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
                     Canada
                 </a>
-                <!-- Australia -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45095" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 200 100"><path fill="#00008B" d="M0 0h200v100H0z"/><path fill="#FFF" d="M0 0h100v50H0zm100 50h100v50h-100z"/><path fill="#00008B" d="M5 5h90v40H5zm105 50h85v40h-85z"/><path fill="#FFF" d="M150 25l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
                     Australia
                 </a>
-                <!-- Deutschland -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45101" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 5 3"><path d="M0 0h5v3H0z"/><path fill="#f00" d="M0 1h5v2H0z"/><path fill="#ffce00" d="M0 2h5v1H0z"/></svg>
                     Deutschland
                 </a>
-                <!-- France -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45103" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 3 2"><path fill="#0055A4" d="M0 0h1v2H0z"/><path fill="#FFF" d="M1 0h1v2H1z"/><path fill="#EF4135" d="M2 0h1v2H2z"/></svg>
                     France
                 </a>
-                <!-- Netherlands -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45105" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 3 2"><path fill="#AE1C28" d="M0 0h3v.67H0z"/><path fill="#FFF" d="M0 .67h3v.67H0z"/><path fill="#21468B" d="M0 1.34h3V2H0z"/></svg>
                     Netherlands
                 </a>
-                <!-- Europe (Last 2) -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45099" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 810 540"><path fill="#039" d="M0 0h810v540H0z"/><path fill="#fc0" d="M405 130l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
                     Europe
                 </a>
-                <!-- Global (Last) -->
                 <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">
                     <svg class="flag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
                     Global
@@ -447,8 +455,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                © 2026 JetHose | Todos os direitos reservados.
-                <span class="distribuidor-tag">Distribuidor Autorizado</span>
+                <p>© 2026 JetHose | Todos os direitos reservados.</p>
+                <p style="font-size: 10px; color: #444; letter-spacing: 0.5px;">Esta página é operada pela UAB Rara Digital, Gedimino pr. 20, Vilnius, Lituânia.</p>
+                <span class="authorized-distributor-note">Distribuidor Oficial Autorizado JetHose™</span>
             </div>
         </div>
     </footer>
