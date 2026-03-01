@@ -17,38 +17,33 @@
 
     <link rel="canonical" href="https://www.jethosepressure.shop/" />
 
-    <!-- Hreflang -->
+    <!-- Hreflang targeting -->
     <link rel="alternate" hreflang="x-default" href="https://www.jethosepressure.shop/" />
     <link rel="alternate" hreflang="en-US" href="https://www.jethosepressure.shop/" />
     <link rel="alternate" hreflang="en-GB" href="https://www.jethosepressure.shop/" />
     <link rel="alternate" hreflang="en-CA" href="https://www.jethosepressure.shop/" />
     <link rel="alternate" hreflang="en-AU" href="https://www.jethosepressure.shop/" />
-    <link rel="alternate" hreflang="fr-FR" href="https://www.jethosepressure.shop/" />
-    <link rel="alternate" hreflang="de-DE" href="https://www.jethosepressure.shop/" />
     <link rel="alternate" hreflang="nl-NL" href="https://www.jethosepressure.shop/" />
 
     <title>JetHose™ Pressure Nozzle | High-Pressure Cleaning Attachment for Any Garden Hose</title>
 
     <meta name="description" content="JetHose™ is a high-pressure hose nozzle attachment that delivers powerful, water-efficient cleaning for driveways, patios, decks, siding, cars and more. Fits standard garden hoses. Limited-time savings + 30-day money-back guarantee." />
-    <meta name="keywords" content="JetHose, JetHose pressure nozzle, high pressure hose nozzle, garden hose nozzle, pressure washing nozzle, hose attachment, driveway cleaning, patio cleaning, deck cleaning, car wash nozzle, water efficient cleaning, hydro power nozzle" />
+    <meta name="keywords" content="JetHose, JetHose pressure nozzle, high pressure hose nozzle, garden hose nozzle, pressure washing nozzle, car wash nozzle, water efficient cleaning" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="JetHose™" />
     <meta property="og:url" content="https://www.jethosepressure.shop/" />
     <meta property="og:title" content="JetHose™ | Incredible Water Pressure in a Small Package" />
-    <meta property="og:description" content="Save time and money with JetHose™—a powerful pressure nozzle that connects to any standard garden hose for fast, water-efficient cleaning. 30-day money-back guarantee." />
+    <meta property="og:description" content="Save time and money with JetHose™—a powerful pressure nozzle that connects to any standard garden hose for fast cleaning." />
     <meta property="og:image" content="https://www.jethosepressure.shop/og-jethose.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="JetHose™ Pressure Nozzle" />
 
     <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
-    <!-- Requested Script -->
+    <!-- Authorized Script -->
     <script src="https://cdn.rartcloud.com/code/8300-185c7760-2916-481f-ac07-09884c4b9c99"></script>
 
     <!-- JSON-LD Structured Data -->
@@ -67,7 +62,6 @@
           "@type": "Product",
           "name": "JetHose",
           "brand": { "@type": "Brand", "name": "JetHose" },
-          "description": "High-pressure hose nozzle attachment.",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.7",
@@ -91,12 +85,13 @@
             --button-background: #0D40FF;
         }
 
-        body { font-family: "Roboto", sans-serif; margin: 0; color: #333; line-height: 1.5; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        body { font-family: "Roboto", sans-serif; margin: 0; color: #333; line-height: 1.5; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; overflow-x: hidden; }
         img { max-width: 100%; height: auto; display: block; }
         ul { list-style: none; padding: 0; margin: 0; }
         a { text-decoration: none; color: inherit; transition: 0.3s; cursor: pointer; }
 
-        .section-container { max-width: 1132px; margin: 0 auto; padding: 24px 16px; }
+        /* Helpers */
+        .section-container { max-width: 1132px; margin: 0 auto; padding: 24px 16px; width: 100%; box-sizing: border-box; }
         .text-bold { font-weight: 700; }
         .d-flex { display: flex; align-items: center; }
 
@@ -108,63 +103,91 @@
         /* Hero */
         .hero { background: var(--hero-background-color); padding: 60px 0; }
         .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .hero-text--heading { font-size: 40px; font-weight: 900; line-height: 1.1; margin-bottom: 16px; color: #000; }
-        .hero-text--subheading { font-size: 20px; color: #444; margin-bottom: 30px; }
+        .hero-text--heading { font-size: 40px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: #000; }
+        .hero-text--subheading { font-size: 18px; color: #444; margin-bottom: 30px; }
         .hero-checklist__item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: #555; font-size: 16px; }
         .hero-checklist__icon { width: 20px; flex-shrink: 0; }
+        
+        /* Slider Fix */
+        .hero-image-container { position: relative; width: 100%; border-radius: 20px; overflow: hidden; background: #eee; aspect-ratio: 1/1; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .hero-image-container img { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            opacity: 0; 
+            transition: opacity 1s ease-in-out; 
+            border-radius: 20px;
+        }
+        .hero-image-container img.active { opacity: 1; }
         .hero-image--mobile { display: none; }
 
-        .cta { display: block; text-align: center; background: #000; color: #fff; padding: 20px 30px; border-radius: 10px; font-weight: 900; text-transform: uppercase; transition: 0.3s; cursor: pointer; border: none; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .cta { display: block; text-align: center; background: #000; color: #fff; padding: 20px 30px; border-radius: 10px; font-weight: 900; text-transform: uppercase; transition: 0.3s; cursor: pointer; border: none; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 100%; box-sizing: border-box; }
         .cta:hover { background: #333; transform: translateY(-2px); }
 
         /* Sections */
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title--heading { font-size: 32px; font-weight: 900; color: var(--section-title-color); margin-bottom: 12px; }
-        .section-title--divider { width: 100px; height: 7px; background: var(--section-seperator-color); margin: 20px auto; border-radius: 10px; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title--heading { font-size: 32px; font-weight: 900; color: var(--section-title-color); margin-bottom: 12px; text-transform: uppercase; }
+        .section-title--divider { width: 80px; height: 6px; background: var(--section-seperator-color); margin: 15px auto; border-radius: 10px; }
 
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .feature-card { background: #fff; padding: 40px 30px; border-radius: 20px; border: 1px solid #eee; text-align: center; }
-        .feature-card__icon { width: 60px; margin: 0 auto 20px; }
+        .feature-card__icon { width: 50px; margin: 0 auto 20px; }
 
         /* Steps */
         .steps-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
         .step-card { background: #fff; border-radius: 20px; border: 1px solid #e0e0e0; overflow: hidden; position: relative; }
         .step-card__img { width: 100%; height: 250px; object-fit: cover; }
-        .step-card__content { padding: 30px 20px 20px; position: relative; text-align: center; }
+        .step-card__content { padding: 40px 20px 20px; position: relative; text-align: center; }
         .step-number { position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; background: #fff; border: 2px solid #00214f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 24px; color: #00214f; }
 
-        /* Countries Grid */
-        .countries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
-        .country-item { display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e0e0e0; padding: 18px; border-radius: 10px; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; gap: 12px; }
-        .country-item:hover { border-color: var(--button-background); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: var(--button-background); }
+        /* Country Grid */
+        .countries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .country-item { display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e0e0e0; padding: 18px; border-radius: 12px; font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; gap: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .country-item:hover { border-color: var(--button-background); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); color: var(--button-background); }
         .flag-icon { width: 24px; height: 18px; flex-shrink: 0; }
 
         /* FAQ */
-        .faq-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; margin-bottom: 15px; padding: 20px; cursor: pointer; }
-        .faq-answer { margin-top: 15px; color: #666; display: none; padding-top: 15px; border-top: 1px solid #eee; }
+        .faq-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; margin-bottom: 12px; padding: 20px; cursor: pointer; transition: 0.2s; }
+        .faq-item:hover { border-color: #ccc; }
+        .faq-answer { margin-top: 15px; color: #666; display: none; padding-top: 15px; border-top: 1px solid #eee; font-size: 15px; }
         .faq-item.active .faq-answer { display: block; }
-        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 16px; }
 
-        /* Coupon Section Fixed */
-        .coupon-box { border: 3px dashed #1c2b54; border-radius: 30px; background: #fff; padding: 50px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 30px; }
-        .coupon-content { max-width: 800px; }
-        .coupon-img { width: 100%; border-radius: 20px; overflow: hidden; }
+        /* Coupon Section Fixed (Stacking correctly) */
+        .coupon-box { border: 3px dashed #1c2b54; border-radius: 30px; background: #fff; padding: 60px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 35px; width: 100%; box-sizing: border-box; }
+        .coupon-content { max-width: 800px; width: 100%; }
+        .coupon-img { width: 100%; max-width: 900px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 
         /* Footer */
         .footer { background: #000; color: #fff; padding: 80px 0 40px; }
         .footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; }
-        .footer h3 { font-size: 16px; margin-bottom: 20px; text-transform: uppercase; color: #fff; }
-        .footer p, .footer li { color: #bdbdbd; font-size: 14px; margin-bottom: 10px; }
+        .footer h3 { font-size: 15px; margin-bottom: 20px; text-transform: uppercase; color: #fff; letter-spacing: 1px; }
+        .footer p, .footer li { color: #888; font-size: 14px; margin-bottom: 10px; }
         .footer-bottom { border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center; }
-        .footer-bottom p { font-size: 11px; color: #555; margin-bottom: 5px; }
-        .authorized-distributor-tag { display: inline-block; font-size: 9px; color: #444; margin-top: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #222; padding: 4px 12px; border-radius: 4px; }
+        .footer-bottom p { font-size: 12px; color: #555; margin-bottom: 6px; }
+        .authorized-distributor-tag { display: inline-block; font-size: 10px; color: #444; margin-top: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #222; padding: 6px 16px; border-radius: 6px; }
 
+        /* Responsive Mobile Fixes */
         @media (max-width: 992px) {
-            .hero__grid, .footer__grid, .steps-container { grid-template-columns: 1fr; }
-            .hero-image--mobile { display: block; margin-bottom: 30px; }
+            .hero__grid, .footer__grid, .steps-container { grid-template-columns: 1fr; gap: 40px; }
+            .hero { padding: 40px 0; }
+            .hero-text--heading { font-size: 32px; text-align: center; }
+            .hero-text--subheading { text-align: center; }
+            .hero-checklist__item { justify-content: center; }
+            
+            /* Photo after title in mobile */
+            .hero-image--mobile { display: block; margin: 25px 0; width: 100%; }
             .hero-image--desktop { display: none; }
-            .countries-grid { grid-template-columns: repeat(2, 1fr); }
-            .coupon-box { padding: 30px 16px; }
+            
+            /* Countries in 2 columns */
+            .countries-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .country-item { padding: 15px 10px; font-size: 12px; }
+
+            .coupon-box { padding: 40px 20px; }
+            .coupon-box .cta { max-width: 100%; }
         }
     </style>
 </head>
@@ -174,9 +197,10 @@
         LIMITED TIME SPECIAL OFFER | UP TO 70% OFF
     </section>
 
+    <!-- Header Navigation -->
     <nav class="header-navigation">
         <div class="header-navigation__wrapper">
-            <a href="#"><img src="images/JetHose_FINAL_LOGO_W.svg" alt="JetHose Logo" style="height: 40px;"></a>
+            <a href="#"><img src="images/JetHose_FINAL_LOGO_W.svg" alt="JetHose Logo" style="height: 35px;"></a>
         </div>
     </nav>
 
@@ -186,97 +210,105 @@
             <div class="section-container">
                 <div class="hero__grid">
                     <div>
-                        <div class="hero-score">
-                            <img src="images/star-4.5_1.svg" width="90" alt="Rating">
+                        <div class="hero-score" style="margin-bottom: 15px;">
+                            <img src="images/star-4.5_1.svg" width="90" alt="Rating" style="display:inline; vertical-align: middle;">
                             <span class="text-bold">4.7</span>
-                            <span style="color: #888;">| +1000 Verified Reviews</span>
+                            <span style="color: #888; font-size: 13px;"> | +1000 Verified Reviews</span>
                         </div>
                         <h1 class="hero-text--heading">JetHose: Incredible Water Pressure for Your Home!</h1>
                         
+                        <!-- Mobile Carousel: Shown here on Mobile -->
                         <div class="hero-image--mobile">
-                            <img src="images/M19KZXQtSG9zZV9QcmVzc3VyZS1Ob3p6bGUuanBn-h_960.jpg" style="border-radius: 20px;" alt="JetHose Product">
+                            <div class="hero-image-container js-slider">
+                                <img src="images/imgi_11_1b419d2636cfe4e589853b85291a84d1.png" class="active" alt="JetHose Action 1">
+                                <img src="images/M19KZXQtSG9zZV9QcmVzc3VyZS1Ob3p6bGUuanBn-h_960.jpg" alt="JetHose Action 2">
+                            </div>
                         </div>
 
-                        <p class="hero-text--subheading">Save 70% today and transform your standard hose into a powerful pressure washer.</p>
-                        <ul>
-                            <li class="hero-checklist__item"><img src="images/Vector-4.svg" class="hero-checklist__icon"> Instant ultra-powerful cleaning</li>
-                            <li class="hero-checklist__item"><img src="images/Vector-4.svg" class="hero-checklist__icon"> Removes heavy dirt and moss</li>
-                            <li class="hero-checklist__item"><img src="images/Vector-4.svg" class="hero-checklist__icon"> Safe for any surface</li>
+                        <p class="hero-text--subheading">Save 70% today and transform your standard garden hose into a high-performance pressure washer instantly.</p>
+                        <ul style="margin-bottom: 30px;">
+                            <li class="hero-checklist__item"><img src="images/Vector-4.svg" class="hero-checklist__icon"> Blast away dirt and grime effortlessly</li>
+                            <li class="hero-checklist__item"><img src="images/Vector-4.svg" class="hero-checklist__icon"> Perfect for driveways, cars, and decks</li>
+                            <li class="hero-checklist__item"><img src="images/Vector-4.svg" class="hero-checklist__icon"> Professional results for a fraction of the cost</li>
                         </ul>
-                        <div class="hero-socials" style="margin-top: 30px;">
-                            <img src="images/socials.png" height="35" alt="Customers">
-                            <span style="font-size: 13px;"><strong>+8,000</strong> Happy Customers | Immediate Shipping</span>
+                        <div class="hero-socials" style="margin-top: 25px; margin-bottom: 25px;">
+                            <img src="images/socials.png" height="35" alt="Customer Success" style="display:inline; margin-bottom: 5px;">
+                            <div style="font-size: 13px; color: #666;"><strong>+8,000</strong> Happy Customers Worldwide</div>
                         </div>
-                        <a href="#countries" class="cta">I WANT MY 70% DISCOUNT</a>
+                        <a href="#countries" class="cta">SECURE MY 70% DISCOUNT</a>
                     </div>
                     
+                    <!-- Desktop Carousel -->
                     <div class="hero-image--desktop">
-                        <img src="images/M19KZXQtSG9zZV9QcmVzc3VyZS1Ob3p6bGUuanBn-h_960.jpg" style="border-radius: 20px;" alt="Product">
+                        <div class="hero-image-container js-slider">
+                            <img src="images/imgi_11_1b419d2636cfe4e589853b85291a84d1.png" class="active" alt="JetHose Product 1">
+                            <img src="images/M19KZXQtSG9zZV9QcmVzc3VyZS1Ob3p6bGUuanBn-h_960.jpg" alt="JetHose Product 2">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features -->
-        <section id="features" class="section-container">
+        <!-- Features Section -->
+        <section id="features" class="section-container" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="section-title">
                 <h2 class="section-title--heading">The Future of Cleaning</h2>
                 <div class="section-title--divider"></div>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <img src="images/1-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Hydro-Power Technology</h4>
-                    <p>Concentrates water pressure for professional results.</p>
+                    <img src="images/1-2.svg" class="feature-card__icon" alt="Tech">
+                    <h4 class="text-bold">Hydro-Power Tech</h4>
+                    <p>Proprietary engineering that maximizes water velocity for deep cleaning.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="images/2-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Real Savings</h4>
-                    <p>Wash at home and save hundreds on cleaning services.</p>
+                    <img src="images/2-2.svg" class="feature-card__icon" alt="Savings">
+                    <h4 class="text-bold">Massive Savings</h4>
+                    <p>No more expensive rental equipment or professional washing fees.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="images/3-2.svg" class="feature-card__icon">
-                    <h4 class="text-bold">Universal Fit</h4>
-                    <p>Fits any standard 3/4" garden hose.</p>
+                    <img src="images/3-2.svg" class="feature-card__icon" alt="Fit">
+                    <h4 class="text-bold">Universal Design</h4>
+                    <p>Designed to fit securely onto any standard garden hose worldwide.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Setup Steps -->
-        <section id="setup" style="background: #fff; padding: 80px 0;">
+        <!-- Steps Section -->
+        <section id="setup" style="background: #fff; padding: 80px 0; border-top: 1px solid #f0f0f0;">
             <div class="section-container">
                 <div class="section-title">
-                    <h2 class="section-title--heading">Ready in 3 Steps</h2>
+                    <h2 class="section-title--heading">Simple 3-Step Setup</h2>
                     <div class="section-title--divider"></div>
                 </div>
                 <div class="steps-container">
                     <div class="step-card">
-                        <img src="images/c3RlcDEuanBn-w_700.jpg" class="step-card__img">
+                        <img src="images/c3RlcDEuanBn-w_700.jpg" class="step-card__img" alt="Step 1">
                         <div class="step-card__content">
                             <div class="step-number">1</div>
-                            <h4 class="text-bold">Connect</h4>
+                            <h4 class="text-bold">Attach</h4>
                         </div>
                     </div>
                     <div class="step-card">
-                        <img src="images/c3RlcDIuanBn-w_700.jpg" class="step-card__img">
+                        <img src="images/c3RlcDIuanBn-w_700.jpg" class="step-card__img" alt="Step 2">
                         <div class="step-card__content">
                             <div class="step-number">2</div>
-                            <h4 class="text-bold">Adjust</h4>
+                            <h4 class="text-bold">Customize</h4>
                         </div>
                     </div>
                     <div class="step-card">
-                        <img src="images/c3RlcDMuanBn-w_700.jpg" class="step-card__img">
+                        <img src="images/c3RlcDMuanBn-w_700.jpg" class="step-card__img" alt="Step 3">
                         <div class="step-card__content">
                             <div class="step-number">3</div>
-                            <h4 class="text-bold">Clean</h4>
+                            <h4 class="text-bold">Blast</h4>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Country Selection (Mobile: 2 columns) -->
-        <section id="countries" class="section-container">
+        <!-- Country Selection Section (2 columns on mobile) -->
+        <section id="countries" class="section-container" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="section-title">
                 <h2 class="section-title--heading">CHOOSE YOUR COUNTRY</h2>
                 <div class="section-title--divider"></div>
@@ -314,14 +346,14 @@
                     <svg class="flag-icon" viewBox="0 0 810 540"><path fill="#039" d="M0 0h810v540H0z"/><path fill="#fc0" d="M405 130l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z"/></svg>
                     Europe
                 </a>
-                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item">
+                <a href="https://www.fasttrack37.com/PM7HK3TH/2Q5BLZTS/?uid=45091" class="country-item" style="grid-column: span 2;">
                     <svg class="flag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
                     Global
                 </a>
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- FAQ Section -->
         <section id="faq" class="section-container">
             <div class="section-title">
                 <h3 class="section-title--heading">Frequently Asked Questions</h3>
@@ -330,46 +362,46 @@
             
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">Does it require any special equipment? <span>+</span></div>
-                <div class="faq-answer">No. JetHose doesn’t require any special equipment beyond a standard garden hose. Simply attach it to your hose, adjust the settings, and you’re ready to start cleaning.</div>
+                <div class="faq-answer">No. JetHose doesn’t require any special equipment beyond a standard garden hose. Simply attach it, adjust the settings, and you’re ready to start cleaning.</div>
             </div>
 
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">How long does it take to see results? <span>+</span></div>
-                <div class="faq-answer">Results can often be seen immediately after application. For stubborn stains, multiple passes may be required.</div>
+                <div class="faq-answer">Results are usually visible immediately. For stubborn, deep-set stains, multiple passes may be required to achieve complete restoration.</div>
             </div>
 
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">Can I use JetHose to remove oil stains? <span>+</span></div>
-                <div class="faq-answer">It eliminates most dirt, algae, and light stains. It reduces visibility of most grease stains, though set-in stains may need a dedicated cleaner first.</div>
+                <div class="faq-answer">It effectively removes surface oil and grease. For very old, set-in oil stains, we recommend a pre-treatment cleaner for best results.</div>
             </div>
 
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">Is it safe to use on delicate surfaces? <span>+</span></div>
-                <div class="faq-answer">Yes. You can reduce the intensity for materials like wood or vinyl. We recommend testing on a small area first.</div>
+                <div class="faq-answer">Yes. You can adjust the intensity to clean softer materials like wood or vinyl siding safely. Always test a small inconspicuous area first.</div>
             </div>
 
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">What surfaces can I use it on? <span>+</span></div>
-                <div class="faq-answer">It's designed for concrete, brick, vinyl siding, wood decking, stone, asphalt, and more.</div>
+                <div class="faq-answer">It is safe for concrete, brick, wood decking, stone, asphalt, vehicles, and more.</div>
             </div>
 
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">How does JetHose work? <span>+</span></div>
-                <div class="faq-answer">It uses advanced hydro-power technology to focus your hose pressure into powerful spray patterns.</div>
+                <div class="faq-answer">It utilizes advanced hydro-power technology to compress and accelerate water flow, providing industrial-strength pressure from your standard home tap.</div>
             </div>
         </section>
 
-        <!-- Final Offer (Nested/Aligned Fix) -->
-        <section class="coupon">
+        <!-- Final Offer Section (Corrected Alingment) -->
+        <section class="coupon" style="padding-bottom: 80px;">
             <div class="section-container">
                 <div class="coupon-box">
                     <div class="coupon-content">
                         <h2 class="section-title--heading" style="margin-bottom: 10px;">ENJOY 70% DISCOUNT NOW!</h2>
-                        <p style="margin-bottom: 24px;">Secure your JetHose today with the biggest discount of the year.</p>
-                        <a href="#countries" class="cta" style="background: #0D40FF; width: 100%; max-width: 500px; margin: 0 auto;">GET MY 70% DISCOUNT</a>
+                        <p style="margin-bottom: 24px; color: #555;">Secure your JetHose today with our exclusive limited-time seasonal discount.</p>
+                        <a href="#countries" class="cta" style="background: #0D40FF; max-width: 450px; margin: 0 auto;">ACTIVATE MY 70% DISCOUNT</a>
                     </div>
                     <div class="coupon-img">
-                        <img src="images/Q291cG9uLTEtZTE3NjA2MTEyNTM0OTYuanBn-w_1100.jpg" alt="Final Offer">
+                        <img src="images/Q291cG9uLTEtZTE3NjA2MTEyNTM0OTYuanBn-w_1100.jpg" alt="JetHose Limited Offer">
                     </div>
                 </div>
             </div>
@@ -381,40 +413,40 @@
         <div class="section-container">
             <div class="footer__grid">
                 <div>
-                    <img src="images/JetHose_FINAL_LOGO_W.svg" width="150" alt="JetHose Logo">
-                    <p style="margin-top: 20px;">JetHose simplifies outdoor cleaning. Connect your hose and watch the magic happen.</p>
+                    <img src="images/JetHose_FINAL_LOGO_W.svg" width="150" alt="JetHose Footer Logo">
+                    <p style="margin-top: 20px;">JetHose simplifies outdoor maintenance. Connect your hose and see the power for yourself.</p>
                 </div>
                 <div>
-                    <h3>Legal Information</h3>
+                    <h3>Legal Info</h3>
                     <ul>
-                        <li><a onclick="openLegal('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="openLegal('terms')">Terms of Service</a></li>
                         <li><a onclick="openLegal('privacy')">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Customer Support</h3>
+                    <h3>Support</h3>
                     <ul>
-                        <li><a onclick="openLegal('shipping')">Shipping & Delivery</a></li>
-                        <li><a onclick="openLegal('returns')">Returns & Exchanges</a></li>
+                        <li><a onclick="openLegal('shipping')">Worldwide Shipping</a></li>
+                        <li><a onclick="openLegal('returns')">Returns Policy</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3>Contact</h3>
                     <ul>
-                        <li><a onclick="openLegal('contact')">Get in Touch</a></li>
+                        <li><a onclick="openLegal('contact')">Customer Support</a></li>
                         <li>Tel: +1 (978) 981-3087</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2026 JetHose | All rights reserved.</p>
-                <p style="font-size: 11px; color: #555; margin-bottom: 5px;">Business Name: UAB Rara Digital, Gedimino pr. 20, Vilnius, Lithuania.</p>
+                <p style="font-size: 11px; color: #555; margin-bottom: 5px;">Operated by: UAB Rara Digital, Gedimino pr. 20, Vilnius, Lithuania.</p>
                 <div class="authorized-distributor-tag">Official Authorized Distributor JetHose™</div>
             </div>
         </div>
     </footer>
 
-    <!-- Modals -->
+    <!-- Legal Modals -->
     <div id="legalModal" class="legal-modal">
         <div class="legal-modal-content">
             <span class="close-modal" onclick="closeLegal()">&times;</span>
@@ -423,12 +455,29 @@
     </div>
 
     <script>
+        // Automatic Carousel Logic (3 seconds interval)
+        function initSliders() {
+            const sliders = document.querySelectorAll('.js-slider');
+            sliders.forEach(slider => {
+                const imgs = slider.querySelectorAll('img');
+                let currentIdx = 0;
+                if(imgs.length < 2) return;
+
+                setInterval(() => {
+                    imgs[currentIdx].classList.remove('active');
+                    currentIdx = (currentIdx + 1) % imgs.length;
+                    imgs[currentIdx].classList.add('active');
+                }, 3000); 
+            });
+        }
+
+        // Modal Logic for Legal Compliance
         const legalData = {
-            terms: `<h2>Terms & Conditions</h2><p>Please read these Terms of Service carefully before purchasing. JetHose is a brand operated by UAB Rara Digital, Lithuania.</p>`,
-            privacy: `<h2>Privacy Policy</h2><p>This Privacy Policy explains how we collect and store your data when you visit our website for processing orders.</p>`,
-            shipping: `<h2>Shipping & Delivery</h2><p>Shipping takes between 5 to 20 calendar days depending on location and customs.</p>`,
-            returns: `<h2>Returns & Cancellation</h2><p>You may return products within 30 days of delivery for a full refund if unused and in original packaging.</p>`,
-            contact: `<h2>Contact Us</h2><p><strong>By Phone:</strong> +1 (978) 981-3087</p><p><strong>By Email:</strong> support@get-jethose.com</p>`
+            terms: `<h2>Terms & Conditions</h2><p>By purchasing JetHose, you agree to our standard terms of sale. Our products are intended for domestic use. We comply with all international safety and shipping regulations.</p>`,
+            privacy: `<h2>Privacy Policy</h2><p>Your data is processed strictly for order fulfillment. We use encrypted payment gateways and do not sell customer information to third parties.</p>`,
+            shipping: `<h2>Worldwide Shipping</h2><p>Standard delivery takes 5-15 business days depending on region. Tracking numbers provided within 48 hours of dispatch.</p>`,
+            returns: `<h2>Money-Back Guarantee</h2><p>We offer a 30-day satisfaction guarantee. If the product is defective or does not meet your needs, return it for a full refund.</p>`,
+            contact: `<h2>Get in Touch</h2><p><strong>Phone:</strong> +1 (978) 981-3087</p><p><strong>Email:</strong> support@get-jethose.com</p>`
         };
 
         function openLegal(key) {
@@ -447,6 +496,11 @@
                 closeLegal();
             }
         }
+
+        // Run on load
+        window.onload = () => {
+            initSliders();
+        };
     </script>
 </body>
 </html>
